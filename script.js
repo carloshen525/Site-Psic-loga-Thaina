@@ -202,6 +202,27 @@ function initAmbientAudio() {
     });
   }
 
+  // Aviso no topo da Hero: clique/toque direto ativa o áudio ambiente
+  const heroCalmBanner = document.getElementById('heroCalmBanner');
+  if (heroCalmBanner) {
+    heroCalmBanner.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!isAudible || audio.paused) {
+        audio.muted = false;
+        attemptPlay();
+      }
+    });
+    heroCalmBanner.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (!isAudible || audio.paused) {
+          audio.muted = false;
+          attemptPlay();
+        }
+      }
+    });
+  }
+
   // DISPARO OBRIGATÓRIO: SEMPRE tenta tocar na abertura do site
   attemptPlay();
   armActivationListeners();
