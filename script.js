@@ -59,7 +59,7 @@ function initAmbientAudio() {
   const audioBtnText = document.getElementById('audioBtnText');
   const audio = document.getElementById('ambientAudio');
 
-  const TARGET_VOLUME = 0.30; // Volume terapêutico perfeitamente audível
+  const TARGET_VOLUME = 0.45; // Volume aumentado para até 45% (perfeitamente audível e confortável)
   const FADE_IN_MS = 2000;    // Fade in suave de 2 segundos
   const FADE_OUT_MS = 1200;   // Fade out de 1,2 segundos
   
