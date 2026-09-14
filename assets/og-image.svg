@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="50%" stop-color="#F2EFE9"/>
+      <stop offset="100%" stop-color="#E8E4DC"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C2A676"/>
+      <stop offset="100%" stop-color="#DFC498"/>
+    </linearGradient>
+    <linearGradient id="sage" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7A9078"/>
+      <stop offset="100%" stop-color="#556953"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#ogBg)"/>
+
+  <!-- Subtle ambient glow orbs -->
+  <circle cx="200" cy="150" r="180" fill="#E2DAD0" opacity="0.6" filter="url(#softGlow)"/>
+  <circle cx="1050" cy="500" r="220" fill="#7A9078" opacity="0.15" filter="url(#softGlow)"/>
+
+  <!-- Elegant Inner Border Frame -->
+  <rect x="36" y="36" width="1128" height="558" rx="24" fill="none" stroke="#C2A676" stroke-width="1.5" stroke-opacity="0.5"/>
+  <rect x="46" y="46" width="1108" height="538" rx="18" fill="none" stroke="#7A9078" stroke-width="1" stroke-opacity="0.25"/>
+
+  <!-- Top Monogram badge -->
+  <g transform="translate(600, 140)">
+    <circle cx="0" cy="0" r="44" fill="#FAF8F5" stroke="#C2A676" stroke-width="1.5"/>
+    <path d="M0 -22 C0 -10 -11 -4 -11 8 C-11 15 -6 20 0 20 C6 20 11 15 11 8 C11 -4 0 -10 0 -22 Z" fill="none" stroke="url(#gold)" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M0 -12 L0 16" stroke="#7A9078" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M-8 0 C-8 6 8 6 8 0" fill="none" stroke="#7A9078" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text Content -->
+  <text x="600" y="245" font-family="'Playfair Display', Georgia, serif" font-size="20" letter-spacing="6" fill="#7A9078" text-anchor="middle" text-transform="uppercase" font-weight="600">PSICOLOGIA CLÍNICA • PASSOS - MG</text>
+  
+  <text x="600" y="330" font-family="'Playfair Display', Georgia, serif" font-size="64" fill="#2C302B" text-anchor="middle" font-weight="500" letter-spacing="1">Thainá Menezes</text>
+
+  <!-- Gold subtle divider -->
+  <line x1="520" y1="365" x2="680" y2="365" stroke="url(#gold)" stroke-width="2"/>
+
+  <text x="600" y="420" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="22" fill="#5A6258" text-anchor="middle" font-weight="400">
+    Um espaço seguro e acolhedor para falar sobre suas emoções e reencontrar o equilíbrio.
+  </text>
+
+  <!-- Tags / Pills at bottom -->
+  <g transform="translate(600, 490)">
+    <rect x="-290" y="-18" width="170" height="36" rx="18" fill="#FFFFFF" stroke="#DED8CE" stroke-width="1"/>
+    <text x="-205" y="5" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#556953" text-anchor="middle" font-weight="500">📍 Passos • MG</text>
+
+    <rect x="-100" y="-18" width="200" height="36" rx="18" fill="#FFFFFF" stroke="#DED8CE" stroke-width="1"/>
+    <text x="0" y="5" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#556953" text-anchor="middle" font-weight="500">🌿 Atendimento Presencial</text>
+
+    <rect x="120" y="-18" width="170" height="36" rx="18" fill="#FFFFFF" stroke="#DED8CE" stroke-width="1"/>
+    <text x="205" y="5" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" fill="#556953" text-anchor="middle" font-weight="500">💬 Agendamento Rápido</text>
+  </g>
+</svg>
