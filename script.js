@@ -125,11 +125,13 @@ function initAmbientAudio() {
       audioBtn.classList.add('playing');
       audioBtnText.textContent = 'Som ambiente';
       audioBtn.setAttribute('title', 'Clique para silenciar o som ambiente');
+      audioBtn.setAttribute('aria-label', 'Som ambiente: ligado. Clique para silenciar');
       audioBtn.setAttribute('aria-pressed', 'true');
     } else {
       audioBtn.classList.remove('playing');
       audioBtnText.textContent = 'Som desligado';
       audioBtn.setAttribute('title', 'Clique para ligar o som ambiente');
+      audioBtn.setAttribute('aria-label', 'Som ambiente: pausado. Clique para reproduzir');
       audioBtn.setAttribute('aria-pressed', 'false');
     }
   }

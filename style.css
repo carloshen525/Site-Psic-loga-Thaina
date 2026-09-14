@@ -199,6 +199,8 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .brand-monogram {
@@ -215,6 +217,7 @@ h1, h2, h3, h4 {
   font-size: 1.15rem;
   font-weight: 600;
   transition: transform var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .brand-logo:hover .brand-monogram {
@@ -224,6 +227,8 @@ h1, h2, h3, h4 {
 .brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  justify-content: center;
 }
 
 .brand-name {
@@ -232,7 +237,8 @@ h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--text-main);
-  line-height: 1.1;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .brand-desc {
@@ -241,6 +247,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
   color: var(--sage-primary);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 /* Menu de Links Desktop */
@@ -284,6 +291,7 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 /* Botão de Áudio Ambiente */
@@ -972,7 +980,7 @@ h1, h2, h3, h4 {
 
 .modalities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
   margin-top: 3.5rem;
 }
@@ -1903,9 +1911,318 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   Media Queries & Responsividade (Mobile First -> Tablets & Desktops)
+   Media Queries & Responsividade (Mobile First & Adaptações Específicas)
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   Ajustes Mobile Específicos (Telas <= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Remove "Psicóloga Clínica • Passos MG" no mobile deixando apenas o nome */
+  .brand-desc {
+    display: none !important;
+  }
+
+  .brand-name {
+    font-size: 1.15rem;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .brand-logo {
+    gap: 0.6rem;
+  }
+
+  .brand-monogram {
+    width: 38px;
+    height: 38px;
+    font-size: 1.05rem;
+  }
+
+  .nav-wrap {
+    height: 68px;
+  }
+
+  .hero-section {
+    padding-top: 90px;
+    padding-bottom: 3.5rem;
+    min-height: auto;
+  }
+
+  /* Espaçamento mais equilibrado entre seções no celular */
+  .empathy-section,
+  .about-section,
+  .process-section,
+  .benefits-section,
+  .modalities-section,
+  .differentials-section,
+  .faq-section,
+  .social-profile-section,
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  /* Imagens proporcionais e confortáveis */
+  .hero-image,
+  .about-photo {
+    height: 380px;
+  }
+
+  /* Grids em coluna única no mobile para evitar overflow horizontal */
+  .modalities-grid,
+  .benefits-grid,
+  .process-grid,
+  .differentials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  /* Gaveta mobile acessível e rolável */
+  .mobile-drawer {
+    top: 68px;
+    height: calc(100dvh - 68px);
+    max-height: calc(100dvh - 68px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 2rem 1.25rem;
+  }
+
+  .mobile-drawer-links {
+    gap: 1.2rem;
+  }
+
+  .mobile-drawer-link {
+    font-size: 1.35rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Smartphones & Telas Pequenas (<= 640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .container {
+    padding-inline: 1.15rem;
+  }
+
+  /* Botão de Som: ícone redondo elegante para liberar espaço no header */
+  .audio-btn-text {
+    display: none;
+  }
+
+  .audio-btn {
+    padding: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  /* Tipografia fluída e legível */
+  .section-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.3rem);
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+  }
+
+  .hero-lead {
+    font-size: 1.02rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-calm-banner {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .hero-buttons {
+    width: 100%;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-badge-floating {
+    bottom: 14px;
+    left: 12px;
+    right: 12px;
+    padding: 0.65rem 0.85rem;
+    gap: 0.65rem;
+  }
+
+  .hero-badge-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .hero-badge-text strong {
+    font-size: 0.82rem;
+  }
+
+  .hero-badge-text span {
+    font-size: 0.74rem;
+  }
+
+  /* Grid de empatia em 2 colunas no celular */
+  .empathy-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .empathy-card {
+    padding: 1rem 0.85rem;
+    gap: 0.65rem;
+  }
+
+  .empathy-card-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+    border-radius: 10px;
+  }
+
+  .empathy-card-title {
+    font-size: 0.88rem;
+  }
+
+  .empathy-closing {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Pilares na seção Sobre */
+  .about-pillars {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  /* Cards com padding adequado */
+  .modality-card {
+    padding: 2rem 1.35rem;
+  }
+
+  .process-card {
+    padding: 2rem 1.35rem;
+  }
+
+  .diff-card {
+    padding: 1.75rem 1.35rem;
+  }
+
+  /* FAQ no mobile */
+  .faq-question {
+    padding: 1.15rem 1.25rem;
+    font-size: 1.15rem;
+    gap: 0.75rem;
+  }
+
+  .faq-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .faq-answer {
+    padding-inline: 1.25rem;
+  }
+
+  .faq-answer-inner {
+    padding-bottom: 1.25rem;
+    font-size: 0.92rem;
+  }
+
+  /* Seção de Contato & Redes */
+  .social-profile-card {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .contact-glass-container {
+    padding: 2.25rem 1.25rem;
+  }
+
+  .address-card {
+    padding: 1.25rem;
+  }
+
+  .contact-phone-block {
+    padding: 1.1rem 1.2rem;
+  }
+
+  .cta-large-btn {
+    padding: 1.1rem 1.2rem;
+    font-size: 0.98rem;
+  }
+
+  /* Botão WhatsApp Flutuante em formato FAB no mobile */
+  .floating-whatsapp {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .floating-whatsapp span {
+    display: none;
+  }
+
+  .floating-whatsapp svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Rodapé mobile */
+  .footer {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .footer-top {
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Celulares Muito Estreitos (<= 380px, ex: Galaxy Z Flip, iPhone SE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-monogram {
+    width: 34px;
+    height: 34px;
+    font-size: 0.98rem;
+  }
+
+  .brand-logo {
+    gap: 0.45rem;
+  }
+
+  .empathy-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image,
+  .about-photo {
+    height: 320px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Desktop & Telas Médias / Grandes
+   -------------------------------------------------------------------------- */
 @media (min-width: 640px) {
   .hero-buttons {
     flex-direction: row;
