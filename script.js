@@ -1,5 +1,5 @@
 /**
- * Psicóloga Clínica Thainá Menezes - Passos / MG
+ * Psicóloga Clínica Fernanda Monteiro - Uberlândia / MG
  * Script Principal: Áudio Ambiente Terapêutico, Interatividade & SEO UX
  */
 
@@ -279,7 +279,7 @@ function initContactActions() {
   const saveContactBtn = document.getElementById('btnSaveContact');
   const shareSiteBtn = document.getElementById('btnShareSite');
 
-  const addressText = 'Rua Ipiranga, Jardim Vila Rica, Passos - MG, CEP 37901-052';
+  const addressText = 'Uberlândia - MG • Atendimento Presencial e Online';
 
   // Copiar Endereço
   if (copyAddressBtn) {
@@ -288,7 +288,7 @@ function initContactActions() {
         showToast('✓ Endereço copiado com sucesso!');
       }).catch(() => {
         // Fallback para seleção manual
-        showToast('📍 Rua Ipiranga, Jardim Vila Rica, Passos - MG');
+        showToast('📍 Uberlândia - MG');
       });
     });
   }
@@ -299,15 +299,15 @@ function initContactActions() {
       const vcardData = [
         'BEGIN:VCARD',
         'VERSION:3.0',
-        'N:Menezes;Thainá;;Psicóloga Clínica;',
-        'FN:Thainá Menezes - Psicóloga Clínica',
+        'N:Monteiro;Fernanda;;Psicóloga Clínica;',
+        'FN:Fernanda Monteiro - Psicóloga Clínica',
         'ORG:Consultório de Psicologia Clínica',
         'TITLE:Psicóloga Clínica',
-        'TEL;TYPE=CELL,VOICE,PREF:+5516993815516',
-        'ADR;TYPE=WORK:;;Rua Ipiranga;Passos;MG;37901-052;Brasil',
-        'EMAIL;TYPE=INTERNET:contato@psicologathainamenezes.com.br',
-        'URL:https://psicologathainamenezes.com.br/',
-        'NOTE:Atendimento psicológico presencial em Passos - MG e online.',
+        'TEL;TYPE=CELL,VOICE,PREF:+5535999999999',
+        'ADR;TYPE=WORK:;;Uberlândia;Uberlândia;MG;;Brasil',
+        'EMAIL;TYPE=INTERNET:contato@psicologafernandamonteiro.com.br',
+        'URL:https://psicologafernandamonteiro.com.br/',
+        'NOTE:Atendimento psicológico presencial em Uberlândia - MG e online.',
         'END:VCARD'
       ].join('\r\n');
 
@@ -315,7 +315,7 @@ function initContactActions() {
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', 'Thaina_Menezes_Psicologa.vcf');
+      link.setAttribute('download', 'Fernanda_Monteiro_Psicologa.vcf');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -329,8 +329,8 @@ function initContactActions() {
   if (shareSiteBtn) {
     shareSiteBtn.addEventListener('click', () => {
       const shareData = {
-        title: 'Thainá Menezes • Psicóloga Clínica em Passos – MG',
-        text: 'Conheça o espaço acolhedor de psicoterapia e saúde emocional da Psicóloga Thainá Menezes em Passos – MG:',
+        title: 'Fernanda Monteiro • Psicóloga Clínica em Uberlândia – MG',
+        text: 'Conheça o espaço acolhedor de psicoterapia e saúde emocional da Psicóloga Fernanda Monteiro em Uberlândia – MG:',
         url: window.location.href
       };
 

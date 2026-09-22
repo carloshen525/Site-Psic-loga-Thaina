@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Psicóloga Clínica Thainá Menezes - Passos / MG
+   Psicóloga Clínica Fernanda Monteiro - Uberlândia / MG
    Design System: Sofisticação, Acolhimento, Serenidade & Leveza
    ========================================================================== */
 
@@ -295,7 +295,7 @@ h1, h2, h3, h4 {
   width: 100%;
 }
 
-/* Controles do Topo (Áudio + WhatsApp + Mobile Toggle) */
+/* Controles do Topo (Áudio + Agendar + Mobile Toggle) */
 .nav-actions {
   display: flex;
   align-items: center;
@@ -361,7 +361,7 @@ h1, h2, h3, h4 {
   50% { height: 12px; }
 }
 
-/* Botão Header WhatsApp */
+/* Botão Header Agendar */
 .header-cta {
   display: none;
   align-items: center;
@@ -769,7 +769,7 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   Seção Sobre Thainá
+   Seção Sobre Fernanda
    ========================================================================== */
 
 .about-section {
@@ -1560,13 +1560,13 @@ h1, h2, h3, h4 {
   opacity: 0.85;
 }
 
-.cta-whatsapp-primary {
+.cta-phone-primary {
   background: var(--sage-deep);
   color: #FFFFFF;
   box-shadow: 0 10px 25px rgba(82, 103, 80, 0.25);
 }
 
-.cta-whatsapp-primary:hover {
+.cta-phone-primary:hover {
   background: #3c4d3a;
   transform: translateY(-2px);
   box-shadow: 0 14px 30px rgba(82, 103, 80, 0.32);
@@ -1772,50 +1772,6 @@ h1, h2, h3, h4 {
 }
 
 /* ==========================================================================
-   Botão Flutuante WhatsApp (Mobile & Desktop)
-   ========================================================================== */
-
-.floating-whatsapp {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 900;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  background: #25D366;
-  color: #FFFFFF;
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-full);
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.38);
-  font-weight: 600;
-  font-size: 0.92rem;
-  transition: all var(--transition-normal);
-  animation: gentlePulse 3s infinite;
-}
-
-.floating-whatsapp:hover {
-  background: #20BA5A;
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.48);
-}
-
-.floating-whatsapp svg {
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
-
-@keyframes gentlePulse {
-  0%, 100% {
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.38);
-  }
-  50% {
-    box-shadow: 0 10px 35px rgba(37, 211, 102, 0.6);
-  }
-}
-
-/* ==========================================================================
    Toast Notification (Feedback Cópia & Compartilhamento)
    ========================================================================== */
 
@@ -1953,7 +1909,7 @@ h1, h2, h3, h4 {
    Ajustes Mobile Específicos (Telas <= 768px)
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Remove "Psicóloga Clínica • Passos MG" no mobile deixando apenas o nome */
+  /* Remove subtítulo do header no mobile deixando apenas o nome */
   .brand-desc {
     display: none !important;
   }
@@ -2196,26 +2152,6 @@ h1, h2, h3, h4 {
   .cta-large-btn {
     padding: 1.1rem 1.2rem;
     font-size: 0.98rem;
-  }
-
-  /* Botão WhatsApp Flutuante em formato FAB no mobile */
-  .floating-whatsapp {
-    bottom: 20px;
-    right: 20px;
-    width: 54px;
-    height: 54px;
-    padding: 0;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  .floating-whatsapp span {
-    display: none;
-  }
-
-  .floating-whatsapp svg {
-    width: 28px;
-    height: 28px;
   }
 
   /* Rodapé mobile */
